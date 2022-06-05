@@ -10,8 +10,9 @@
 
 ## Korte omschrijving van de app
 BQ-scanner
-........................... 
-  Voor mijn eindopdracht van Cordova heb ik een bonnenscanner app gebouwd. In deze app kan de gebruiker bonnen inscannen. Na het inscannen worden de bonnen bewaard op de lokaalschijf van het toestel, met de huidige datum erbij. De gebruiker kan de opgeslagen bonnen altijd raadplegen. Met zo’n app, denk ik dat de gebruiker geen bon meer gaat verliezen
+
+
+ Voor mijn eindopdracht van Cordova heb ik een bonnenscanner app gebouwd. In deze app kan de gebruiker bonnen inscannen. Na het inscannen worden de bonnen bewaard op de lokaalschijf van het toestel, met de huidige datum erbij. De gebruiker kan de opgeslagen bonnen altijd raadplegen. Met zo’n app, denk ik dat de gebruiker geen bon meer gaat verliezen
       Ernaast is er in deze app een QR-scanner die gebruikt kan worden om URL’s af te leiden uit QR-codes en  daarna kan de URL’s worden geopend in een webbrowser. De URL’s worden in een database gestoken, met het uniek nummer van de GSM als de sleutel. In een latere versie van deze app kan een geschiedenis pagina van de URL’s worden opgebouwd per GSM.
 
 ## Plug-ins in mijn app
