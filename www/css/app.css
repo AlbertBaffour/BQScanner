@@ -1,0 +1,81 @@
+body{background-color: transparent;
+}
+a.brand-logo {
+    font-size: 1.2rem;
+}
+.bg-image{
+    background-image: url(../img/scanner.jpg)!important;
+    background-size:cover ;}
+.bg-gradient{background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(135,134,152,1) 0%, rgba(186,186,196,1) 20%, rgba(212,212,219,1) 25%, rgba(228,228,233,1) 30%, rgba(253,253,255,1) 38%);
+}
+p {
+    text-align: justify;
+}
+.spa {
+display: none;
+}
+#imgTag{width: 340px;
+    height: 400px}
+#tabToevoegen{
+    display: block;//important_mag_hier_niet
+}
+#WB{
+    font-size: x-large;
+}
+.top0{
+    top:0!important;
+}
+.top20{top: 20px}
+.top35{
+    top:35%;
+}
+.left0{
+    left: 0;}
+.left40{left: 40%}
+.left68{left: 68px!important;}
+.left112{left: 112px!important;}
+.btn-bonnen-homepage{
+    top: 50%;
+    left: 4%;
+    width: 100%;
+}
+.min-h-55{
+    min-height: 55px!important;
+}
+.vorm1 {
+    animation-name: verplaatsen;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    /* animation-play-state: running;*/
+    animation-delay: 2s;
+}
+@keyframes verplaatsen {
+
+    100% {
+        transform: translateX(-30px) translateY(-20px);
+    }
+
+}
+@keyframes start_animatie {
+    0% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+
+
+}
+.start_animatie {
+    background-repeat: no-repeat;
+    animation-name: start_animatie;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="nl" class="h-100 overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/materialize.1.0.0.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <title>BQ-Scanner</title>
+</head>
+<body class="h-100 ">
+<div id="WB_start" class="start_animatie"> </div>
+<header>
+
+    <div class="navbar-fixed">
+    <nav class="white light-blue">
+        <div class="nav-wrapper container bg-image">
+            <a href="#!" class="brand-logo center text-darken-4 white-text">BQ-Scanner</a>
+
+        </div>
+    </nav>
+    </div>
+    <div class="fixed-action-btn top0">
+
+       <a class="btn-floating btn-large light-blue darken-4 ">
+            <i class="large material-icons">menu</i>
+        </a>
+        <ul id="menu">
+            <li><a href="#!" data-show="tabToevoegen"  onclick="QRScan.stop();prepareBonScanner()"  class=" btn-floating red darken-4"><i class="large material-icons">add</i></a></li>
+            <li><a href="#!" data-show="tabBonnen"  onclick="BonScan.stop();QRScan.stop();toonBonnenlijst();" class="btn-floating green darken-4"><i class="large material-icons">receipt</i></a></li>
+            <li><a href="#!" data-show="tabQR" onclick="BonScan.stop();prepareQRScanner();" class="btn-floating  yellow darken-4"><i class="large material-icons">QR</i></a></li>
+            <li><a href="#!" data-show="tabURLhistory" id="tabURLgeschiedenis"  onclick="QRScan.stop();BonScan.stop();"  class="btn-floating blue-grey darken-3"><i class="large material-icons">history</i></a></li>
+            <li><a href="#!" data-show="tabInfo" onclick="BonScan.stop();QRScan.stop()" class=" btn-floating light-blue darken-4"><i class="large material-icons">info</i></a></li>
+        </ul>
+    </div>
+</header>
+<main class="container h-100">
+    <div class="row spa h-100" id="tabToevoegen">
+        <div class="col s12 h-100 position-relative">
+            <svg class="vorm1" height="220" width="360">
+                <polygon points="360 20,120 20,20 210" style="fill:rgba(13,115,182,0.09);stroke-width:1" />
+            </svg><svg class="position-absolute top0 left0" height="270" width="360">
+                <polygon points="360 30,270 270,0 230" style="fill:rgba(51,124,168,0.36);stroke-width:1" />
+            </svg>
+            <p id="WB" class="black-text position-absolute top20"></p>
+
+            <a href="#!" onclick="prepareBonScanner()"  class="btn-large top35 left40 btn-floating red darken-4"><i class="large material-icons">add</i></a>
+            <div id="menu_masterpage" class="position-absolute btn-bonnen-homepage">
+            <hr>
+                     <a href="#!" data-show="tabBonnen" onclick="toonBonnenlijst()" class="white  btn">
+                        Opgeslagen bonnen <span class="badge badge-light" id="aantalBonnen"></span>
+                    </a>
+
+
+            <hr>
+            </div>
+        </div>
+    </div>
+  <div class="row spa" id="tabBonnen">
+        <div class="col s12">
+            <h4 class="center scrolling"><i class="material-icons">receipt</i>Bonnen</h4>
+            <div id="divImgTag"  class="spa" ><p id="captionBon"></p>
+                <img id="imgTag" alt="foto van bon">
+                <a href="#!" id="terugBonnenLijst" class="btn-large top35 left40 btn-floating blue darken-4"><i class="large material-icons">arrow_back</i></a>
+            </div>
+            <ul id="bonnenlijst" class="collection">
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="row spa" id="tabQR">
+        <div class="col s12">
+            <h4 class="nav-title white-text center">QR Scanner</h4>
+
+        </div>
+    </div>
+    <div class="row spa" id="tabURLhistory">
+        <div class="col s12">
+            <h4 class="nav-title black-text center"><i class="material-icons">history</i> URL's</h4>
+            <ul id="data_url" class="list-group">
+<!--                <li class="list-group-item">urls</li>-->
+            </ul>
+        </div>
+    </div>
+
+        <div class="row spa" id="tabInfo">
+        <div class="col s12 bg-radial black-text">
+
+            <div class="row w-100">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="img/info.jpg">
+                         </div>
+                        <div class="card-content">
+
+                            <h4>Auteur </h4>
+                            <p><a class="black-text" href="https://albert.sinners.be">Albert Baffour</a></p>
+                            <p><a class="black-text" href="mailto:r0801439@student.thomasmore.be">r0801439@student.thomasmore.be</a></p>
+                            <p><a class="black-text" href="tel:+32483681122">+32 (0)483 68 11 22</a></p></div>
+                        <a href="tel:+32483681122" class="left btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">call</i></a>
+                        <a href="sms:+32483681122" class="left68 btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">sms</i></a>
+                        <a href="mailto:r0801439@student.thomasmore.be" class="left112 btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">email</i></a>
+
+                    </div>
+                </div>
+            </div>
+            <h4 class="center">Doel van deze app </h4>
+            <p class="m-4">Deze app is bedoeld om mensen te helpen met het bewaren van allerlei bonnen. Daarnaast kan de app worden gebruikt om QR-codes te scannen.</p>
+<p class="m-4 center">BQ-Scanner v1.0</p>
+        </div>
+    </div>
+</main>
+<script src="js/jquery.3.5.1min.js"></script>
+<script src="js/materialize.1.0.0.min.js"></script>
+<script src="cordova.js"></script>
+<script src="js/bonscan.js"></script>
+<script src="js/geschiedenis_url.js"></script>
+<script src="js/qrscan.js"></script>
+<script defer src="js/app.js"></script>
+<script>
+
+</script>
+</body>
+</html>
